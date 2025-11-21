@@ -15,7 +15,7 @@ export default function Home() {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/assets/videos/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
           <div className="md:w-1/2">
             <img
-              src="/about-image.jpg"
+              src="/assets/images/about-image.jpg"
               alt="About Sarana Consultancy"
               className="rounded-lg shadow-lg"
             />
