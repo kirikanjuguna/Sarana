@@ -1,5 +1,19 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
-import { ClipboardDocumentIcon, ShieldCheckIcon, LightBulbIcon } from "@heroicons/react/24/outline";
+import {
+  ClipboardDocumentIcon,
+  ShieldCheckIcon,
+  LightBulbIcon,
+} from "@heroicons/react/24/outline";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Swiper styles
+import "swiper/css";
+import "swiper/css/autoplay";
+
+// ✔ Correct import for Swiper v11+
+import { Autoplay } from "swiper/modules";
 
 export default function Home() {
   const services = [
@@ -38,7 +52,6 @@ export default function Home() {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src="/assets/videos/hero-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
 
         {/* Overlay */}
@@ -95,9 +108,14 @@ export default function Home() {
       <section className="py-24 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Sarana Consultancy?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Sarana Consultancy?
+            </h2>
             <p className="text-gray-200">
-              With years of experience in professional hygiene services, we guarantee reliability, quality, and safety for all our clients. Our team uses only the best equipment and eco-friendly products to ensure your environment stays clean and healthy.
+              With years of experience in professional hygiene services, we
+              guarantee reliability, quality, and safety for all our clients.
+              Our team uses only the best equipment and eco–friendly products to
+              ensure your environment stays clean and healthy.
             </p>
           </div>
           <div className="md:w-1/2">
@@ -110,13 +128,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Clients Carousel Section */}
       <section className="py-24 bg-accent text-white text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Elevate Your Hygiene Standards?</h2>
-        <p className="mb-8">Contact us today and request a personalized quote for your business or institution.</p>
-        <button className="bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-          Request a Quote
-        </button>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Clients</h2>
+
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          loop
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+          modules={[Autoplay]} // ✔ Correct integration
+          className="max-w-7xl mx-auto"
+        >
+          <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 1"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 2"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 3"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 4"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+        </Swiper>
       </section>
 
       {/* Footer */}

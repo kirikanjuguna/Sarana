@@ -7,9 +7,9 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image
-            src="/assets/images/logo.png" // logo path 
+            src="/assets/logo.svg" // logo path 
             alt="Sarana Consultancy Logo"
-            width={150} // adjust size to fit your navbar
+            width={80} // adjust size to fit your navbar
             height={50}
             className="object-contain"
           />
