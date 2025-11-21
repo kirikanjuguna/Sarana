@@ -1,6 +1,28 @@
 import Navbar from "@/components/Navbar";
+import { ClipboardDocumentIcon, ShieldCheckIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
+  const services = [
+    {
+      title: "Commercial Cleaning",
+      description:
+        "Maintain spotless offices and facilities with our professional cleaning services.",
+      icon: ClipboardDocumentIcon,
+    },
+    {
+      title: "Sanitization",
+      description:
+        "Protect your environment with our top-tier sanitization solutions.",
+      icon: ShieldCheckIcon,
+    },
+    {
+      title: "Consultancy",
+      description:
+        "Expert guidance to maintain hygiene standards and compliance.",
+      icon: LightBulbIcon,
+    },
+  ];
+
   return (
     <main className="relative min-h-screen bg-primary">
       <Navbar />
@@ -48,25 +70,23 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Our Services
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition">
-              <h3 className="font-semibold text-xl mb-2">Commercial Cleaning</h3>
-              <p className="text-gray-600">
-                Maintain spotless offices and facilities with our professional cleaning services.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition">
-              <h3 className="font-semibold text-xl mb-2">Sanitization</h3>
-              <p className="text-gray-600">
-                Protect your environment with our top-tier sanitization solutions.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition">
-              <h3 className="font-semibold text-xl mb-2">Consultancy</h3>
-              <p className="text-gray-600">
-                Expert guidance to maintain hygiene standards and compliance.
-              </p>
-            </div>
+            {services.map((service, idx) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                >
+                  <div className="flex justify-center mb-4">
+                    <Icon className="h-12 w-12 text-accent" />
+                  </div>
+                  <h3 className="font-semibold text-xl mb-2">{service.title}</h3>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
