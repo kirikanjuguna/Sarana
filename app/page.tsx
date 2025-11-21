@@ -2,32 +2,116 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-primary">
+    <main className="relative min-h-screen bg-primary">
       <Navbar />
 
-      {/* Push hero section below fixed navbar */}
-      <div className="pt-24">
-        <section className="min-h-screen bg-primary flex flex-col items-center justify-center text-center px-6">
-          <h1 className="text-5xl md:text-6xl font-bold text-orange max-w-4xl">
+      {/* Hero Section */}
+      <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-primary/70"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 px-6 max-w-4xl">
+          <h1 className="text-5xl md:text-6xl font-bold text-orange">
             Professional Hygiene & Cleaning Solutions You Can Trust
           </h1>
-
-          <p className="mt-6 text-lg text-gray-200 max-w-2xl">
+          <p className="mt-6 text-lg text-gray-200 max-w-2xl mx-auto">
             Creating safe, clean, and healthy environments for businesses,
             institutions, and residences since 2016.
           </p>
-
-          <div className="mt-8 flex gap-4">
-            <button className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition">
               Request a Quote
             </button>
-
-            <button className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-primary">
+            <button className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition">
               View Services
             </button>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-gray-50 text-primary">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Our Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+              <h3 className="font-semibold text-xl mb-2">Commercial Cleaning</h3>
+              <p className="text-gray-600">
+                Maintain spotless offices and facilities with our professional cleaning services.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+              <h3 className="font-semibold text-xl mb-2">Sanitization</h3>
+              <p className="text-gray-600">
+                Protect your environment with our top-tier sanitization solutions.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow p-6 text-center hover:shadow-lg transition">
+              <h3 className="font-semibold text-xl mb-2">Consultancy</h3>
+              <p className="text-gray-600">
+                Expert guidance to maintain hygiene standards and compliance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-primary text-white">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Sarana Consultancy?</h2>
+            <p className="text-gray-200">
+              With years of experience in professional hygiene services, we guarantee reliability, quality, and safety for all our clients. Our team uses only the best equipment and eco-friendly products to ensure your environment stays clean and healthy.
+            </p>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src="/about-image.jpg"
+              alt="About Sarana Consultancy"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-accent text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Elevate Your Hygiene Standards?</h2>
+        <p className="mb-8">Contact us today and request a personalized quote for your business or institution.</p>
+        <button className="bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+          Request a Quote
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-gray-300 py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <h3 className="text-xl font-bold text-orange">Sarana Consultancy</h3>
+          <p>&copy; {new Date().getFullYear()} Sarana Consultancy. All rights reserved.</p>
+          <ul className="flex gap-4">
+            <li className="hover:text-orange cursor-pointer">Home</li>
+            <li className="hover:text-orange cursor-pointer">About</li>
+            <li className="hover:text-orange cursor-pointer">Services</li>
+            <li className="hover:text-orange cursor-pointer">Contact</li>
+          </ul>
+        </div>
+      </footer>
     </main>
   );
 }
