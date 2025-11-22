@@ -129,7 +129,7 @@ export default function Home() {
       </section>
 
       {/* Clients Carousel Section */}
-      <section className="py-24 bg-accent text-white text-center">
+      <section className="py-24 bg-white text-accent text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Clients</h2>
 
         <Swiper
@@ -167,6 +167,27 @@ export default function Home() {
             />
           </SwiperSlide>
           <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 4"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+                    <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 4"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+                    <SwiperSlide>
+            <img
+              src="/assets/clients/client1.png"
+              alt="Client 4"
+              className="h-16 object-contain mx-auto"
+            />
+          </SwiperSlide>
+                    <SwiperSlide>
             <img
               src="/assets/clients/client1.png"
               alt="Client 4"
