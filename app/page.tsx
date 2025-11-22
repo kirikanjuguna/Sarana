@@ -81,60 +81,119 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-gray-50 text-primary">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Services
-          </h2>
+            {/* About Section */}
+      <section className="py-24 bg-white text-primary">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, idx) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                >
-                  <div className="flex justify-center mb-4">
-                    <Icon className="h-12 w-12 text-accent" />
-                  </div>
-                  <h3 className="font-semibold text-xl mb-2">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+          {/* Text */}
+          <div className="space-y-6">
+            <div>
+              <span className="inline-block h-1 w-16 bg-orange mb-4"></span>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Why Choose Sarana Consultancy?
+              </h2>
+            </div>
 
-      {/* About Section */}
-      <section className="py-24 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose Sarana Consultancy?
-            </h2>
-            <p className="text-gray-200">
-              With years of experience in professional hygiene services, we
-              guarantee reliability, quality, and safety for all our clients.
-              Our team uses only the best equipment and eco–friendly products to
-              ensure your environment stays clean and healthy.
+            <p className="text-accent leading-relaxed">
+              With years of experience in professional hygiene services,
+              we guarantee reliability, quality, and safety for all our clients.
+              Our team uses only the best equipment and eco–friendly products
+              to ensure your environment stays clean and healthy.
             </p>
+
+            {/* Value Points */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div className="flex items-start gap-3">
+                <ShieldCheckIcon className="h-6 w-6 text-orange flex-shrink-0" />
+                <p className="text-gray-700">Certified & trained hygiene staff</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <LightBulbIcon className="h-6 w-6 text-orange flex-shrink-0" />
+                <p className="text-gray-700">Expert guidance & consultancy</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <ClipboardDocumentIcon className="h-6 w-6 text-orange flex-shrink-0" />
+                <p className="text-gray-700">Reliable and efficient service delivery</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <ShieldCheckIcon className="h-6 w-6 text-orange flex-shrink-0" />
+                <p className="text-gray-700">Eco-friendly & approved products</p>
+              </div>
+            </div>
+
+            <button className="mt-4 inline-block bg-accent px-6 py-3 rounded-lg text-white hover:bg-accent/90 transition">
+              Learn More
+            </button>
           </div>
-          <div className="md:w-1/2">
+
+          {/* Overlapping Images Collage */}
+          <div className="relative w-full h-[400px] md:h-[500px]">
             <img
               src="/assets/images/about-image.jpg"
-              alt="About Sarana Consultancy"
-              className="rounded-lg shadow-lg"
+              alt="Service 1"
+              className="absolute top-0 left-0 w-2/3 h-2/3 rounded-2xl shadow-2xl object-cover z-10"
+            />
+            <img
+              src="/assets/images/about-image.jpg"
+              alt="Service 2"
+              className="absolute top-12 right-0 w-1/2 h-1/2 rounded-2xl shadow-2xl object-cover border-4 border-white z-20"
+            />
+            <img
+              src="/assets/images/about-image.jpg"
+              alt="Service 3"
+              className="absolute bottom-0 left-1/9 w-1/2 h-1/2 rounded-2xl shadow-2xl object-cover border-4 border-white z-10"
+            />
+            <img
+              src="/assets/images/about-image.jpg"
+              alt="Service 4"
+              className="absolute bottom-4 right-1/9 w-1/3 h-1/3 rounded-2xl shadow-2xl object-cover border-4 border-white z-30"
             />
           </div>
+
         </div>
       </section>
 
+
+
+          {/* Services Section */}
+      <section className="py-24 bg-gray-50 text-primary">
+        <div className="max-w-7xl mx-auto px-6 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Our Services
+          </h2>
+          {/* Accent Line */}
+          <span className="inline-block h-1 w-16 bg-orange mt-2"></span>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, idx) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-xl shadow-md p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4">
+                  <Icon className="h-12 w-12 text-accent" />
+                </div>
+                <h3 className="font-semibold text-xl mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+
       {/* Clients Carousel Section */}
-      <section className="py-24 bg-white text-accent text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Clients</h2>
+      <section className="py-24 bg-white text-primary text-center">
+        <div className="max-w-7xl mx-auto px-6 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Our Clients
+          </h2>
+          {/* Accent Line */}
+          <span className="inline-block h-1 w-16 bg-orange mt-2"></span>
+        </div>
 
         <Swiper
           spaceBetween={50}
@@ -177,24 +236,24 @@ export default function Home() {
               className="h-16 object-contain mx-auto"
             />
           </SwiperSlide>
-                    <SwiperSlide>
+          <SwiperSlide>
             <img
               src="/assets/clients/client1.png"
-              alt="Client 4"
+              alt="Client 5"
               className="h-16 object-contain mx-auto"
             />
           </SwiperSlide>
-                    <SwiperSlide>
+          <SwiperSlide>
             <img
               src="/assets/clients/client1.png"
-              alt="Client 4"
+              alt="Client 6"
               className="h-16 object-contain mx-auto"
             />
           </SwiperSlide>
-                    <SwiperSlide>
+          <SwiperSlide>
             <img
               src="/assets/clients/client1.png"
-              alt="Client 4"
+              alt="Client 7"
               className="h-16 object-contain mx-auto"
             />
           </SwiperSlide>
@@ -236,17 +295,17 @@ export default function Home() {
 
               <li className="flex items-start gap-3">
                 <MapPinIcon className="h-6 w-6 text-orange" />
-                <span>Nairobi, Kenya</span>
+                <span>Peponi road<br/>Nairobi, Kenya</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <PhoneIcon className="h-6 w-6 text-orange" />
-                <span>+254 700 000 000</span>
+                <span>+254 751 435511<br/>+254 724 435511</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <EnvelopeIcon className="h-6 w-6 text-orange" />
-                <span>info@saranaconsultancy.com</span>
+                <span>hygiene@saranaconsultants.co.ke</span>
               </li>
 
             </ul>
