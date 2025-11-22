@@ -5,7 +5,11 @@ import {
   ClipboardDocumentIcon,
   ShieldCheckIcon,
   LightBulbIcon,
+  MapPinIcon,
+  PhoneIcon,
+  EnvelopeIcon,
 } from "@heroicons/react/24/outline";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Swiper styles
@@ -198,18 +202,84 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-gray-300 py-12">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <h3 className="text-xl font-bold text-orange">Sarana Consultancy</h3>
-          <p>&copy; {new Date().getFullYear()} Sarana Consultancy. All rights reserved.</p>
-          <ul className="flex gap-4">
-            <li className="hover:text-orange cursor-pointer">Home</li>
-            <li className="hover:text-orange cursor-pointer">About</li>
-            <li className="hover:text-orange cursor-pointer">Services</li>
-            <li className="hover:text-orange cursor-pointer">Contact</li>
-          </ul>
+      <footer className="bg-primary text-gray-300 py-16 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+          {/* Brand / Logo */}
+          <div className="flex flex-col items-start">
+            <img
+              src="/assets/logo.png" 
+              alt="Sarana Consultancy Logo"
+              className="h-16 w-auto mb-4"
+            />
+            <p className="text-gray-400 leading-relaxed">
+              Professional hygiene, cleaning, and sanitization services for businesses,
+              institutions, and residential environments.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <ul className="space-y-3">
+              <li className="hover:text-orange transition cursor-pointer">Home</li>
+              <li className="hover:text-orange transition cursor-pointer">About Us</li>
+              <li className="hover:text-orange transition cursor-pointer">Services</li>
+              <li className="hover:text-orange transition cursor-pointer">Contact</li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
+            <ul className="space-y-4">
+
+              <li className="flex items-start gap-3">
+                <MapPinIcon className="h-6 w-6 text-orange" />
+                <span>Nairobi, Kenya</span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <PhoneIcon className="h-6 w-6 text-orange" />
+                <span>+254 700 000 000</span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <EnvelopeIcon className="h-6 w-6 text-orange" />
+                <span>info@saranaconsultancy.com</span>
+              </li>
+
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
+            <div className="flex gap-4">
+
+              <a className="p-3 bg-white/10 rounded-lg hover:bg-accent transition">
+                <Facebook className="h-6 w-6" />
+              </a>
+
+              <a className="p-3 bg-white/10 rounded-lg hover:bg-accent transition">
+                <Instagram className="h-6 w-6" />
+              </a>
+
+              <a className="p-3 bg-white/10 rounded-lg hover:bg-accent transition">
+                <Linkedin className="h-6 w-6" />
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div className="mt-12 border-t border-white/10 pt-6 text-center text-gray-400">
+          &copy; {new Date().getFullYear()} Sarana Consultancy. All rights reserved.
         </div>
       </footer>
+
+
     </main>
   );
 }
