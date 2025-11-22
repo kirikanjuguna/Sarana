@@ -134,17 +134,17 @@ export default function Home() {
               className="absolute top-0 left-0 w-2/3 h-2/3 rounded-2xl shadow-2xl object-cover z-10"
             />
             <img
-              src="/assets/images/about-image.jpg"
+              src="/assets/images/about-image4.jpg"
               alt="Service 2"
               className="absolute top-12 right-0 w-1/2 h-1/2 rounded-2xl shadow-2xl object-cover border-4 border-white z-20"
             />
             <img
-              src="/assets/images/about-image.jpg"
+              src="/assets/images/about-image2.jpg"
               alt="Service 3"
-              className="absolute bottom-0 left-1/9 w-1/2 h-1/2 rounded-2xl shadow-2xl object-cover border-4 border-white z-10"
+              className="absolute bottom-0 left-1/10 w-1/2 h-1/2 rounded-2xl shadow-2xl object-cover border-4 border-white z-10"
             />
             <img
-              src="/assets/images/about-image.jpg"
+              src="/assets/images/about-image3.jpg"
               alt="Service 4"
               className="absolute bottom-4 right-1/9 w-1/3 h-1/3 rounded-2xl shadow-2xl object-cover border-4 border-white z-30"
             />
