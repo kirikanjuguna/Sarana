@@ -210,7 +210,7 @@ export default function Home() {
             <img
               src="/assets/logo.png" 
               alt="Sarana Consultancy Logo"
-              className="h-16 w-auto mb-4"
+              className="h-30 w-auto mb-4"
             />
             <p className="text-gray-400 leading-relaxed">
               Professional hygiene, cleaning, and sanitization services for businesses,
